@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RipodLab2", "RipodLab2.csproj", "{B55B726E-02AF-4B1C-8C6B-76020071CEDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RipodLab2", "RipodLab2\RipodLab2.csproj", "{3DD8B3DC-4EF8-4FA1-AAB7-406709799A81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B55B726E-02AF-4B1C-8C6B-76020071CEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B55B726E-02AF-4B1C-8C6B-76020071CEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B55B726E-02AF-4B1C-8C6B-76020071CEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B55B726E-02AF-4B1C-8C6B-76020071CEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD8B3DC-4EF8-4FA1-AAB7-406709799A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD8B3DC-4EF8-4FA1-AAB7-406709799A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD8B3DC-4EF8-4FA1-AAB7-406709799A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD8B3DC-4EF8-4FA1-AAB7-406709799A81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9DD55A1D-F793-472E-90BF-B7B4385EB052}
+		SolutionGuid = {E189BB65-42E9-404A-A383-391C56F337F8}
 	EndGlobalSection
 EndGlobal
