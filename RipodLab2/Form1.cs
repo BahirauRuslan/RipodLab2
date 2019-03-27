@@ -14,7 +14,7 @@ namespace RipodLab2
     {
         public Form1()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

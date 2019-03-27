@@ -1,6 +1,6 @@
 ﻿namespace RipodLab2
 {
-    partial class Form1
+    public partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -37,4 +38,3 @@
         #endregion
     }
 }
-
