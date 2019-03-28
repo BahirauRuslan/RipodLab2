@@ -44,16 +44,16 @@
         {
             this.matrixGridView = new System.Windows.Forms.DataGridView();
             this.resultGridView = new System.Windows.Forms.DataGridView();
+            this.stepColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeAddColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeMulColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tasksTrackBar = new System.Windows.Forms.TrackBar();
             this.typeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.taskLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.planButton = new System.Windows.Forms.Button();
-            this.stepColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeAddColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeMulColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.matrixGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasksTrackBar)).BeginInit();
@@ -61,9 +61,21 @@
             // 
             // matrixGridView
             // 
-            this.matrixGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.matrixGridView.AllowUserToAddRows = false;
+            this.matrixGridView.AllowUserToDeleteRows = false;
+            this.matrixGridView.AllowUserToResizeColumns = false;
+            this.matrixGridView.AllowUserToResizeRows = false;
+            this.matrixGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.matrixGridView.ColumnHeadersHeight = 15;
+            this.matrixGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.matrixGridView.ColumnHeadersVisible = false;
             this.matrixGridView.Location = new System.Drawing.Point(12, 12);
+            this.matrixGridView.MultiSelect = false;
             this.matrixGridView.Name = "matrixGridView";
+            this.matrixGridView.RowHeadersVisible = false;
+            this.matrixGridView.RowHeadersWidth = 15;
+            this.matrixGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.matrixGridView.RowTemplate.Height = 15;
             this.matrixGridView.Size = new System.Drawing.Size(265, 265);
             this.matrixGridView.TabIndex = 0;
             // 
@@ -81,6 +93,37 @@
             this.resultGridView.Size = new System.Drawing.Size(265, 153);
             this.resultGridView.TabIndex = 1;
             // 
+            // stepColumn
+            // 
+            this.stepColumn.HeaderText = "Шаг";
+            this.stepColumn.Name = "stepColumn";
+            this.stepColumn.ReadOnly = true;
+            this.stepColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.stepColumn.Width = 50;
+            // 
+            // taskColumn
+            // 
+            this.taskColumn.HeaderText = "Операции";
+            this.taskColumn.Name = "taskColumn";
+            this.taskColumn.ReadOnly = true;
+            this.taskColumn.Width = 112;
+            // 
+            // typeAddColumn
+            // 
+            this.typeAddColumn.HeaderText = "Тип +";
+            this.typeAddColumn.Name = "typeAddColumn";
+            this.typeAddColumn.ReadOnly = true;
+            this.typeAddColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.typeAddColumn.Width = 50;
+            // 
+            // typeMulColumn
+            // 
+            this.typeMulColumn.HeaderText = "Тип *";
+            this.typeMulColumn.Name = "typeMulColumn";
+            this.typeMulColumn.ReadOnly = true;
+            this.typeMulColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.typeMulColumn.Width = 50;
+            // 
             // tasksTrackBar
             // 
             this.tasksTrackBar.LargeChange = 1;
@@ -91,6 +134,7 @@
             this.tasksTrackBar.Size = new System.Drawing.Size(104, 45);
             this.tasksTrackBar.TabIndex = 2;
             this.tasksTrackBar.Value = 12;
+            this.tasksTrackBar.Scroll += new System.EventHandler(this.TasksTrackBar_Scroll);
             // 
             // typeTextBox
             // 
@@ -133,43 +177,13 @@
             this.planButton.TabIndex = 7;
             this.planButton.Text = "План";
             this.planButton.UseVisualStyleBackColor = true;
-            // 
-            // stepColumn
-            // 
-            this.stepColumn.HeaderText = "Шаг";
-            this.stepColumn.Name = "stepColumn";
-            this.stepColumn.ReadOnly = true;
-            this.stepColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.stepColumn.Width = 50;
-            // 
-            // taskColumn
-            // 
-            this.taskColumn.HeaderText = "Операции";
-            this.taskColumn.Name = "taskColumn";
-            this.taskColumn.ReadOnly = true;
-            this.taskColumn.Width = 112;
-            // 
-            // typeAddColumn
-            // 
-            this.typeAddColumn.HeaderText = "Тип +";
-            this.typeAddColumn.Name = "typeAddColumn";
-            this.typeAddColumn.ReadOnly = true;
-            this.typeAddColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.typeAddColumn.Width = 50;
-            // 
-            // typeMulColumn
-            // 
-            this.typeMulColumn.HeaderText = "Тип *";
-            this.typeMulColumn.Name = "typeMulColumn";
-            this.typeMulColumn.ReadOnly = true;
-            this.typeMulColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.typeMulColumn.Width = 50;
+            this.planButton.Click += new System.EventHandler(this.PlanButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 452);
+            this.ClientSize = new System.Drawing.Size(537, 452);
             this.Controls.Add(this.planButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.taskLabel);
