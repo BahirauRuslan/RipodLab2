@@ -55,6 +55,7 @@
     <Compile Include="Graph.cs" />
     <Compile Include="GraphConstructor.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="Plan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -39,8 +39,15 @@ namespace RipodLab2
             for (var i = 0; i < nodesArr.Length; i++)
             {
                 var index = FildColumnIndex(nodes, i);
-                nodesArr[i].Next = nodesArr[index];
-                nodesArr[index].Parents.Add(nodesArr[i]);
+                if (index > -1)
+                {
+                    nodesArr[i].Next = nodesArr[index];
+                    nodesArr[index].Parents.Add(nodesArr[i]);
+                }
+                else
+                {
+                    nodesArr[i].Next = null;
+                }
             }
         }
 
